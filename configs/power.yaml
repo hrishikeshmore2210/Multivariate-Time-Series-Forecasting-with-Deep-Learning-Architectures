@@ -1,0 +1,25 @@
+run_name: power_lstm
+seed: 42
+
+data:
+  train_csv: data/power/train.csv
+  val_csv:   data/power/val.csv
+  test_csv:  data/power/test.csv
+  features:  ['MT_370', 'MT_196', 'MT_279', 'MT_364', 'MT_208', 'MT_339', 'MT_228']
+  target:    MT_362
+  seq_len: 96
+  stride: 1
+
+model:
+  name: lstm
+  output_dim: 1
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.1
+
+train:
+  batch_size: 128
+  epochs: 30
+  patience: 5
+  lr: 1.0e-3
+  weight_decay: 1.0e-4

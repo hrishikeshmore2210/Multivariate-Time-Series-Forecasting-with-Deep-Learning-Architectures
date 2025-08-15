@@ -1,0 +1,27 @@
+run_name: weather_transformer
+seed: 42
+
+data:
+  train_csv: data/weather/train.csv
+  val_csv:   data/weather/val.csv
+  test_csv:  data/weather/test.csv
+  features:  ['p (mbar)', 'T (degC)', 'VPmax (mbar)', 'VPdef (mbar)', 'sh (g/kg)', 'rho (g/m**3)', 'wv (m/s)']
+  target:    'T (degC)'
+  seq_len: 120
+  stride: 1
+
+model:
+  name: transformer
+  output_dim: 1
+  d_model: 128
+  nhead: 4
+  num_layers: 2
+  dim_feedforward: 256
+  dropout: 0.1
+
+train:
+  batch_size: 128
+  epochs: 30
+  patience: 5
+  lr: 1.0e-3
+  weight_decay: 1.0e-4

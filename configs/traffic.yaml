@@ -1,0 +1,25 @@
+run_name: traffic_lstm
+seed: 42
+
+data:
+  train_csv: data/traffic/train.csv
+  val_csv:   data/traffic/val.csv
+  test_csv:  data/traffic/test.csv
+  features:  ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10']
+  target:    S0
+  seq_len: 96
+  stride: 1
+
+model:
+  name: lstm
+  output_dim: 1
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.1
+
+train:
+  batch_size: 128
+  epochs: 30
+  patience: 5
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
