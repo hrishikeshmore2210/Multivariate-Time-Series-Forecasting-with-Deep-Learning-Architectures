@@ -27,6 +27,7 @@ The models are evaluated on **accuracy**, **latency**, and **error patterns** to
 ├── references.bib            # Bibliography for the IEEE paper
 ├── final_full_report.tex     # Main IEEE-format report
 ├── README.md                 # This file
+├── download_datasets.py      # Dataset download
 └── requirements.txt          # Python dependencies
 ```
 
@@ -99,9 +100,7 @@ pip install -r requirements.txt
 ### 4. Download & Prepare Datasets
 Run preprocessing scripts for each dataset:
 ```bash
-python scripts/prep_power.py
-python scripts/prep_traffic.py
-python scripts/prep_weather.py
+python download_datasets.py
 ```
 
 ### 5. Train Models
