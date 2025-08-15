@@ -98,7 +98,7 @@ pip install -r requirements.txt
 ```
 
 ### 4. Download & Prepare Datasets
-Run preprocessing scripts for each dataset:
+Run preprocessing scripts for dataset download:
 ```bash
 python download_datasets.py
 ```
